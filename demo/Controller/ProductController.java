@@ -1,7 +1,6 @@
 package com.example.demo.Controller;
 
 import com.example.demo.Api.ApiResponse;
-import com.example.demo.Model.Category;
 import com.example.demo.Model.Product;
 import com.example.demo.Model.User;
 import com.example.demo.Service.ProductService;
@@ -77,7 +76,7 @@ public class ProductController {
     public ResponseEntity getProductById(@PathVariable Integer id) {
         Product product = productService.getProductById(id);
         if (product == null) {
-            return ResponseEntity.status(400).body(new ApiResponse("User not found"));
+            return ResponseEntity.status(400).body(new ApiResponse("Product not found"));
         }
         return ResponseEntity.status(200).body(product);
     }

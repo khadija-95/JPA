@@ -9,7 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+
 
 @RestController
 @RequestMapping("api/v1/category")
@@ -56,7 +56,7 @@ public class CategoryController {
     public ResponseEntity getCategoryById(@PathVariable Integer id) {
         Category category = categoryService.getCategoryById(id);
         if (category == null) {
-            return ResponseEntity.status(400).body(new ApiResponse("User not found"));
+            return ResponseEntity.status(400).body(new ApiResponse("category not found"));
         }
         return ResponseEntity.status(200).body(category);
     }
